@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruslon Toraboyev - Professional Freelancer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6c63ff;
+            --secondary: #4a44c9;
+            --accent: #ff6584;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #28a745;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            color: var(--dark);
+            background-color: #f9f9f9;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+        }
+        
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .language-switcher {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .lang-btn {
+            background: transparent;
+            border: 1px solid white;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-btn.active {
+            background: white;
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 160px 0 100px;
+            background: linear-gradient(rgba(108, 99, 255, 0.1), rgba(108, 99, 255, 0.2)), url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: var(--dark);
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeIn 1s ease;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background: var(--secondary);
+            border-color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Packages Section */
+        .packages {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+        
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .package-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .package-header {
+            background: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .package-body {
+            padding: 25px;
+            flex-grow: 1;
+        }
+        
+        .package-features {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .package-features li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .package-features li i {
+            color: var(--primary);
+            margin-right: 10px;
+        }
+        
+        .package-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .package-footer {
+            padding: 0 25px 25px;
+            text-align: center;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+            animation: modalFadeIn 0.5s ease;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #999;
+            transition: color 0.3s ease;
+        }
+        
+        .close-modal:hover {
+            color: var(--dark);
+        }
+        
+        .modal-title {
+            margin-bottom: 20px;
+            color: var(--primary);
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Raleway', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+        }
+        
+        /* Portfolio Section */
+        .portfolio {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .portfolio-item {
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            height: 250px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-img {
+            transform: scale(1.05);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(108, 99, 255, 0.8);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-img {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .contact-info {
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-item i {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+        
+        /* Completed Orders */
+        .completed-orders {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .orders-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .orders-table th, .orders-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .orders-table th {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .orders-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        .orders-table tr:hover {
+            background: #f1f1f1;
+        }
+        
+        .client-info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .client-contact {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* Join Section */
+        .join {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+        }
+        
+        .join h2 {
+            margin-bottom: 30px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--primary);
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animated {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-img, .about-text {
+                flex: none;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Ruslon Toraboyev" class="logo-img">
+                <div class="logo-text">Ruslon Toraboyev</div>
+            </div>
+            
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#packages">Services</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#about">About</a>
+                <a href="#completed">Completed</a>
+            </nav>
+            
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="ru">RU</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1 data-translate="welcome_title">Welcome! I am a professional Freelancer</h1>
+            <p data-translate="welcome_text">I can provide you with precise help. I will complete your work accurately and on time. Comprehensive services and quality results</p>
+            <div class="hero-buttons">
+                <a href="#packages" class="btn btn-primary" data-translate="services_btn">My Services</a>
+                <a href="#contact" class="btn btn-outline" data-translate="contact_btn">Contact</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="packages" id="packages">
+        <div class="container">
+            <h2 class="section-title" data-translate="services_title">Service Packages</h2>
+            
+            <div class="packages-grid">
+                <!-- Package 1 -->
+                <div class="package-card animated">
+                    <div class="package-header">
+                        <h3 data-translate="package1_title">Website Setup and Bug Fixing</h3>
+                    </div>
+                    <div class="package-body">
+                        <p data-translate="package1_desc">Setup of your existing websites, bug fixing and optimization services</p>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> <span data-translate="package1_feature1">Bug fixing</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate="package1_feature2">Website acceleration</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate="package1_feature3">Mobile optimization</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate="package1_feature4">Security enhancement</span></li>
+                        </ul>
+                        <div class="package-price" data-translate="package1_price">Starting from $50</div>
+                    </div>
+                    <div class="package-footer">
+                        <button class="btn btn-primary order-btn" data-package="Website Setup and Bug Fixing" data-translate="order_btn">Order Now</button>
+                    </div>
+                </div>
+                
+                <!-- Package 2 -->
+                <div class="package-card animated">
+                    <div class="package-header">
+                        <h3 data-translate="package2_title">Web Design</h3>
+                    </div>
+                    <div class="package-body">
+                        <p data-translate="package2_desc">Modern, attractive and user-friendly web designs</p>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> <span data-translate="package2_feature1">UI/UX design</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate="package2_feature2">Mobile design</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate="package2_feature3">Prototype creation</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate="package2_feature4">3 revisions</span></li>
+                        </ul>
+                        <div class="package-price" data-translate="package2_price">Starting from $100</div>
+                    </div>
+                    <div class="package-footer">
+                        <button class="btn btn-primary order-btn" data-package="Web Design" data-translate="order_btn">Order Now</button>
+                    </div>
+                </div>
+                
+                <!-- Package 3 -->
+                <div class="package-card animated">
+                    <div class="package-header">
+                        <h3 data-translate="package3_title">Logo Design</h3>
+                    </div>
+                    <div class="package-body">
+                        <p data-translate="package3_desc">Professional logo design for branding and corporate identity</p>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> <span data-translate="package3_feature1">3 concepts</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate="package3_feature2">5 revisions</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate="package3_feature3">PNG, SVG, AI formats</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate="package3_feature4">Color variants</span></li>
+                        </ul>
+                        <div class="package-price" data-translate="package3_price">Starting from $50</div>
+                    </div>
+                    <div class="package-footer">
+                        <button class="btn btn-primary order-btn" data-package="Logo Design" data-translate="order_btn">Order Now</button>
+                    </div>
+                </div>
+                
+                <!-- Package 4 -->
+                <div class="package-card animated">
+                    <div class="package-header">
+                        <h3 data-translate="package4_title">Translation Services</h3>
+                    </div>
+                    <div class="package-body">
+                        <p data-translate="package4_desc">Professional translation services in all languages</p>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> <span data-translate="package4_feature1">Technical translation</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate="package4_feature2">Literary translation</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate="package4_feature3">Fast delivery</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate="package4_feature4">Comments and explanations</span></li>
+                        </ul>
+                        <div class="package-price" data-translate="package4_price">$0.05/word</div>
+                    </div>
+                    <div class="package-footer">
+                        <button class="btn btn-primary order-btn" data-package="Translation Services" data-translate="order_btn">Order Now</button>
+                    </div>
+                </div>
+                
+                <!-- Package 5 -->
+                <div class="package-card animated">
+                    <div class="package-header">
+                        <h3 data-translate="package5_title">Marketing Ideas and Branding</h3>
+                    </div>
+                    <div class="package-body">
+                        <p data-translate="package5_desc">Marketing strategies and branding for business development</p>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> <span data-translate="package5_feature1">Marketing strategy</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate="package5_feature2">Brand identity</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate="package5_feature3">SWOT analysis</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate="package5_feature4">Development plan</span></li>
+                        </ul>
+                        <div class="package-price" data-translate="package5_price">Starting from $150</div>
+                    </div>
+                    <div class="package-footer">
+                        <button class="btn btn-primary order-btn" data-package="Marketing Ideas and Branding" data-translate="order_btn">Order Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2 class="section-title" data-translate="portfolio_title">Portfolio</h2>
+            
+            <div class="portfolio-grid">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item animated">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Web Design Project" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 data-translate="portfolio1_title">E-commerce Website</h3>
+                        <p data-translate="portfolio1_desc">Full-featured online store</p>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item animated">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Marketing Project" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 data-translate="portfolio2_title">Marketing Strategy</h3>
+                        <p data-translate="portfolio2_desc">Marketing plan for a new brand</p>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item animated">
+                    <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Logo Design Project" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 data-translate="portfolio3_title">Logo Design</h3>
+                        <p data-translate="portfolio3_desc">Logo for tech company</p>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 4 -->
+                <div class="portfolio-item animated">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Corporate Website" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 data-translate="portfolio4_title">Corporate Website</h3>
+                        <p data-translate="portfolio4_desc">Website for large company</p>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 5 -->
+                <div class="portfolio-item animated">
+                    <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="App Design" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 data-translate="portfolio5_title">Mobile App Design</h3>
+                        <p data-translate="portfolio5_desc">App for iOS and Android</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title" data-translate="about_title">About Me</h2>
+            
+            <div class="about-content">
+                <div class="about-img animated">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Ruslon Toraboyev">
+                </div>
+                
+                <div class="about-text animated">
+                    <h2>Ruslon Toraboyev</h2>
+                    <p data-translate="about_text1">I am a professional freelancer with over 5 years of experience. I have completed a wide range of projects in programming, design, translation and marketing. My main principle is individual approach to each client and providing high quality service.</p>
+                    <p data-translate="about_text2">I am happy to complete my work on time and offer solutions that meet the needs of clients. I have all the necessary knowledge and experience to successfully implement your project.</p>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>+998931225324</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>ruslontoraboyev0@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-telegram"></i>
+                            <span>@TRuslon</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Completed Orders Section -->
+    <section class="completed-orders" id="completed">
+        <div class="container">
+            <h2 class="section-title" data-translate="completed_title">Completed Orders</h2>
+            
+            <table class="orders-table">
+                <thead>
+                    <tr>
+                        <th data-translate="client_info">Client Information</th>
+                        <th data-translate="service_type">Service Type</th>
+                        <th data-translate="price">Price</th>
+                        <th data-translate="work_time">Work Time</th>
+                        <th data-translate="status">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="client-info">
+                                <strong>Azizbek Ismoilov</strong>
+                                <div class="client-contact">
+                                    <div>+998******567</div>
+                                    <div>azi*******@gmail.com</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td data-translate="web_design">Web Design</td>
+                        <td>$120</td>
+                        <td>5 days</td>
+                        <td data-translate="completed">Completed</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="client-info">
+                                <strong>Dilnoza Xasanova</strong>
+                                <div class="client-contact">
+                                    <div>+998******321</div>
+                                    <div>dil*******@mail.com</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td data-translate="logo_design">Logo Design</td>
+                        <td>$60</td>
+                        <td>3 days</td>
+                        <td data-translate="completed">Completed</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="client-info">
+                                <strong>Javohir Usmonov</strong>
+                                <div class="client-contact">
+                                    <div>+998******477</div>
+                                    <div>jav*******@mail.com</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td data-translate="website_setup">Website Setup</td>
+                        <td>$80</td>
+                        <td>2 days</td>
+                        <td data-translate="completed">Completed</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="client-info">
+                                <strong>Sanjar Qodirov</strong>
+                                <div class="client-contact">
+                                    <div>+998******233</div>
+                                    <div>san*******@mail.com</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td data-translate="marketing_strategy">Marketing Strategy</td>
+                        <td>$200</td>
+                        <td>7 days</td>
+                        <td data-translate="completed">Completed</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="client-info">
+                                <strong>Nigora Xamidova</strong>
+                                <div class="client-contact">
+                                    <div>+998******766</div>
+                                    <div>nig*******@mail.com</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td data-translate="translation">Translation</td>
+                        <td>$45</td>
+                        <td>1 day</td>
+                        <td data-translate="completed">Completed</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Join Section -->
+    <section class="join" id="join">
+        <div class="container">
+            <h2 data-translate="join_title">For Professional Freelancers</h2>
+            <p data-translate="join_text">If you also want to offer your services, fill out the form below</p>
+            
+            <button class="btn btn-outline" id="joinBtn" data-translate="join_btn">Join Now</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="logo">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Ruslon Toraboyev" class="logo-img">
+                <div class="logo-text">Ruslon Toraboyev</div>
+            </div>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+            
+            <p class="copyright">© 2023 Ruslon Toraboyev. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Order Modal -->
+    <div class="modal" id="orderModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title" data-translate="order_title">Place Order</h2>
+            
+            <form id="orderForm">
+                <input type="hidden" id="selectedPackage">
+                
+                <div class="form-group">
+                    <label for="clientName" data-translate="name_label">Your Name</label>
+                    <input type="text" id="clientName" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="clientWhatsApp" data-translate="whatsapp_label">WhatsApp Number</label>
+                    <input type="tel" id="clientWhatsApp" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="clientEmail" data-translate="email_label">Email</label>
+                    <input type="email" id="clientEmail" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="clientMessage" data-translate="message_label">Additional Note (Optional)</label>
+                    <textarea id="clientMessage" class="form-control" rows="3"></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" data-translate="submit_btn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Join Modal -->
+    <div class="modal" id="joinModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title" data-translate="join_form_title">Join as Professional Freelancer</h2>
+            
+            <form id="joinForm">
+                <div class="form-group">
+                    <label for="freelancerName" data-translate="name_label">Full Name</label>
+                    <input type="text" id="freelancerName" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="freelancerCountry" data-translate="country_label">Country</label>
+                    <input type="text" id="freelancerCountry" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="freelancerWhatsApp" data-translate="whatsapp_label">WhatsApp Number</label>
+                    <input type="tel" id="freelancerWhatsApp" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="freelancerEmail" data-translate="email_label">Email</label>
+                    <input type="email" id="freelancerEmail" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="freelancerLanguages" data-translate="languages_label">Which Languages Do You Know?</label>
+                    <input type="text" id="freelancerLanguages" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="freelancerSpecialty" data-translate="specialty_label">Your Specialty</label>
+                    <input type="text" id="freelancerSpecialty" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="freelancerAbout" data-translate="about_label">About Yourself</label>
+                    <textarea id="freelancerAbout" class="form-control" rows="3" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" data-translate="submit_btn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Message -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title" data-translate="success_title">Message Sent!</h2>
+            <p data-translate="success_text">Your request has been sent successfully. We will contact you shortly.</p>
+            <button class="btn btn-primary" id="successOk">OK</button>
+        </div>
+    </div>
+
+    <script>
+        // Language translations
+        const translations = {
+            'en': {
+                'welcome_title': 'Welcome! I am a professional Freelancer',
+                'welcome_text': 'I can provide you with precise help. I will complete your work accurately and on time. Comprehensive services and quality results',
+                'services_btn': 'My Services',
+                'contact_btn': 'Contact',
+                'services_title': 'Service Packages',
+                'package1_title': 'Website Setup and Bug Fixing',
+                'package1_desc': 'Setup of your existing websites, bug fixing and optimization services',
+                'package1_feature1': 'Bug fixing',
+                'package1_feature2': 'Website acceleration',
+                'package1_feature3': 'Mobile optimization',
+                'package1_feature4': 'Security enhancement',
+                'package1_price': 'Starting from $50',
+                'package2_title': 'Web Design',
+                'package2_desc': 'Modern, attractive and user-friendly web designs',
+                'package2_feature1': 'UI/UX design',
+                'package2_feature2': 'Mobile design',
+                'package2_feature3': 'Prototype creation',
+                'package2_feature4': '3 revisions',
+                'package2_price': 'Starting from $100',
+                'package3_title': 'Logo Design',
+                'package3_desc': 'Professional logo design for branding and corporate identity',
+                'package3_feature1': '3 concepts',
+                'package3_feature2': '5 revisions',
+                'package3_feature3': 'PNG, SVG, AI formats',
+                'package3_feature4': 'Color variants',
+                'package3_price': 'Starting from $50',
+                'package4_title': 'Translation Services',
+                'package4_desc': 'Professional translation services in all languages',
+                'package4_feature1': 'Technical translation',
+                'package4_feature2': 'Literary translation',
+                'package4_feature3': 'Fast delivery',
+                'package4_feature4': 'Comments and explanations',
+                'package4_price': '$0.05/word',
+                'package5_title': 'Marketing Ideas and Branding',
+                'package5_desc': 'Marketing strategies and branding for business development',
+                'package5_feature1': 'Marketing strategy',
+                'package5_feature2': 'Brand identity',
+                'package5_feature3': 'SWOT analysis',
+                'package5_feature4': 'Development plan',
+                'package5_price': 'Starting from $150',
+                'order_btn': 'Order Now',
+                'portfolio_title': 'Portfolio',
+                'portfolio1_title': 'E-commerce Website',
+                'portfolio1_desc': 'Full-featured online store',
+                'portfolio2_title': 'Marketing Strategy',
+                'portfolio2_desc': 'Marketing plan for a new brand',
+                'portfolio3_title': 'Logo Design',
+                'portfolio3_desc': 'Logo for tech company',
+                'portfolio4_title': 'Corporate Website',
+                'portfolio4_desc': 'Website for large company',
+                'portfolio5_title': 'Mobile App Design',
+                'portfolio5_desc': 'App for iOS and Android',
+                'about_title': 'About Me',
+                'about_text1': 'I am a professional freelancer with over 5 years of experience. I have completed a wide range of projects in programming, design, translation and marketing. My main principle is individual approach to each client and providing high quality service.',
+                'about_text2': 'I am happy to complete my work on time and offer solutions that meet the needs of clients. I have all the necessary knowledge and experience to successfully implement your project.',
+                'completed_title': 'Completed Orders',
+                'client_info': 'Client Information',
+                'service_type': 'Service Type',
+                'price': 'Price',
+                'work_time': 'Work Time',
+                'status': 'Status',
+                'web_design': 'Web Design',
+                'logo_design': 'Logo Design',
+                'website_setup': 'Website Setup',
+                'marketing_strategy': 'Marketing Strategy',
+                'translation': 'Translation',
+                'completed': 'Completed',
+                'join_title': 'For Professional Freelancers',
+                'join_text': 'If you also want to offer your services, fill out the form below',
+                'join_btn': 'Join Now',
+                'order_title': 'Place Order',
+                'name_label': 'Your Name',
+                'whatsapp_label': 'WhatsApp Number',
+                'email_label': 'Email',
+                'message_label': 'Additional Note (Optional)',
+                'submit_btn': 'Submit',
+                'join_form_title': 'Join as Professional Freelancer',
+                'country_label': 'Country',
+                'languages_label': 'Which Languages Do You Know?',
+                'specialty_label': 'Your Specialty',
+                'about_label': 'About Yourself',
+                'success_title': 'Message Sent!',
+                'success_text': 'Your request has been sent successfully. We will contact you shortly.'
+            },
+            'ru': {
+                'welcome_title': 'Добро пожаловать! Я профессиональный Фрилансер',
+                'welcome_text': 'Я могу предоставить вам точную помощь. Я выполню вашу работу точно и вовремя. Комплексные услуги и качественные результаты',
+                'services_btn': 'Мои Услуги',
+                'contact_btn': 'Контакт',
+                'services_title': 'Пакеты Услуг',
+                'package1_title': 'Настройка сайта и исправление ошибок',
+                'package1_desc': 'Настройка ваших существующих сайтов, исправление ошибок и услуги оптимизации',
+                'package1_feature1': 'Исправление ошибок',
+                'package1_feature2': 'Ускорение сайта',
+                'package1_feature3': 'Мобильная оптимизация',
+                'package1_feature4': 'Повышение безопасности',
+                'package1_price': 'От $50',
+                'package2_title': 'Веб-дизайн',
+                'package2_desc': 'Современный, привлекательный и удобный веб-дизайн',
+                'package2_feature1': 'UI/UX дизайн',
+                'package2_feature2': 'Мобильный дизайн',
+                'package2_feature3': 'Создание прототипа',
+                'package2_feature4': '3 правки',
+                'package2_price': 'От $100',
+                'package3_title': 'Дизайн логотипа',
+                'package3_desc': 'Профессиональный дизайн логотипа для брендинга и корпоративной идентичности',
+                'package3_feature1': '3 концепции',
+                'package3_feature2': '5 правок',
+                'package3_feature3': 'Форматы PNG, SVG, AI',
+                'package3_feature4': 'Цветовые варианты',
+                'package3_price': 'От $50',
+                'package4_title': 'Услуги перевода',
+                'package4_desc': 'Профессиональные услуги перевода на всех языках',
+                'package4_feature1': 'Технический перевод',
+                'package4_feature2': 'Литературный перевод',
+                'package4_feature3': 'Быстрая доставка',
+                'package4_feature4': 'Комментарии и объяснения',
+                'package4_price': '$0.05/слово',
+                'package5_title': 'Маркетинговые идеи и брендинг',
+                'package5_desc': 'Маркетинговые стратегии и брендинг для развития бизнеса',
+                'package5_feature1': 'Маркетинговая стратегия',
+                'package5_feature2': 'Идентичность бренда',
+                'package5_feature3': 'SWOT анализ',
+                'package5_feature4': 'План развития',
+                'package5_price': 'От $150',
+                'order_btn': 'Заказать',
+                'portfolio_title': 'Портфолио',
+                'portfolio1_title': 'Интернет-магазин',
+                'portfolio1_desc': 'Полнофункциональный онлайн-магазин',
+                'portfolio2_title': 'Маркетинговая стратегия',
+                'portfolio2_desc': 'Маркетинговый план для нового бренда',
+                'portfolio3_title': 'Дизайн логотипа',
+                'portfolio3_desc': 'Логотип для tech компании',
+                'portfolio4_title': 'Корпоративный сайт',
+                'portfolio4_desc': 'Сайт для крупной компании',
+                'portfolio5_title': 'Дизайн мобильного приложения',
+                'portfolio5_desc': 'Приложение для iOS и Android',
+                'about_title': 'Обо мне',
+                'about_text1': 'Я профессиональный фрилансер с более чем 5-летним опытом работы. Я выполнил широкий спектр проектов в области программирования, дизайна, перевода и маркетинга. Мой основной принцип - индивидуальный подход к каждому клиенту и предоставление качественных услуг.',
+                'about_text2': 'Я рад выполнять свою работу вовремя и предлагать решения, соответствующие потребностям клиентов. У меня есть все необходимые знания и опыт для успешной реализации вашего проекта.',
+                'completed_title': 'Выполненные заказы',
+                'client_info': 'Информация о клиенте',
+                'service_type': 'Тип услуги',
+                'price': 'Цена',
+                'work_time': 'Время работы',
+                'status': 'Статус',
+                'web_design': 'Веб-дизайн',
+                'logo_design': 'Дизайн логотипа',
+                'website_setup': 'Настройка сайта',
+                'marketing_strategy': 'Маркетинговая стратегия',
+                'translation': 'Перевод',
+                'completed': 'Завершено',
+                'join_title': 'Для профессиональных фрилансеров',
+                'join_text': 'Если вы также хотите предложить свои услуги, заполните форму ниже',
+                'join_btn': 'Присоединиться',
+                'order_title': 'Разместить заказ',
+                'name_label': 'Ваше имя',
+                'whatsapp_label': 'Номер WhatsApp',
+                'email_label': 'Email',
+                'message_label': 'Дополнительная заметка (необязательно)',
+                'submit_btn': 'Отправить',
+                'join_form_title': 'Присоединиться как профессиональный фрилансер',
+                'country_label': 'Страна',
+                'languages_label': 'Какие языки вы знаете?',
+                'specialty_label': 'Ваша специализация',
+                'about_label': 'О себе',
+                'success_title': 'Сообщение отправлено!',
+                'success_text': 'Ваш запрос успешно отправлен. Мы свяжемся с вами в ближайшее время.'
+            }
+        };
+
+        // DOM Elements
+        const orderButtons = document.querySelectorAll('.order-btn');
+        const orderModal = document.getElementById('orderModal');
+        const joinBtn = document.getElementById('joinBtn');
+        const joinModal = document.getElementById('joinModal');
+        const successModal = document.getElementById('successModal');
+        const closeModalButtons = document.querySelectorAll('.close-modal');
+        const orderForm = document.getElementById('orderForm');
+        const joinForm = document.getElementById('joinForm');
+        const selectedPackageInput = document.getElementById('selectedPackage');
+        const successOk = document.getElementById('successOk');
+        const langButtons = document.querySelectorAll('.lang-btn');
+        
+        // Current language
+        let currentLang = 'en';
+        
+        // Animation on scroll
+        const animatedElements = document.querySelectorAll('.animated');
+        
+        function checkAnimation() {
+            animatedElements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.classList.add('animate');
+                }
+            });
+        }
+        
+        // Change language function
+        function changeLanguage(lang) {
+            currentLang = lang;
+            
+            // Update active button
+            langButtons.forEach(btn => {
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            
+            // Update all translatable elements
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            // Update placeholders
+            document.querySelectorAll('[data-translate-placeholder]').forEach(element => {
+                const key = element.getAttribute('data-translate-placeholder');
+                if (translations[lang][key]) {
+                    element.setAttribute('placeholder', translations[lang][key]);
+                }
+            });
+        }
+        
+        // Event Listeners
+        orderButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const packageName = button.getAttribute('data-package');
+                selectedPackageInput.value = packageName;
+                orderModal.style.display = 'flex';
+            });
+        });
+        
+        joinBtn.addEventListener('click', () => {
+            joinModal.style.display = 'flex';
+        });
+        
+        closeModalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                orderModal.style.display = 'none';
+                joinModal.style.display = 'none';
+                successModal.style.display = 'none';
+            });
+        });
+        
+        orderForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            orderModal.style.display = 'none';
+            successModal.style.display = 'flex';
+            
+            // Here you would normally send the data to your server
+            // For demonstration, we're just showing a success message
+            console.log('Order form submitted');
+            orderForm.reset();
+        });
+        
+        joinForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            joinModal.style.display = 'none';
+            successModal.style.display = 'flex';
+            
+            // Here you would normally send the data to your server
+            // For demonstration, we're just showing a success message
+            console.log('Join form submitted');
+            joinForm.reset();
+        });
+        
+        successOk.addEventListener('click', () => {
+            successModal.style.display = 'none';
+        });
+        
+        // Language switcher
+        langButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const lang = button.getAttribute('data-lang');
+                changeLanguage(lang);
+            });
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === orderModal) orderModal.style.display = 'none';
+            if (e.target === joinModal) joinModal.style.display = 'none';
+            if (e.target === successModal) successModal.style.display = 'none';
+        });
+        
+        // Initialize animations on scroll
+        window.addEventListener('scroll', checkAnimation);
+        window.addEventListener('load', checkAnimation);
+    </script>
+</body>
+</html>
